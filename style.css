@@ -12,13 +12,19 @@ header{
     background: rgb(197, 184, 186);
     border-radius: 10px;
     text-align: center;
+    /* ADD: Ensure minimal padding on desktop too */
+    padding: 15px; 
 }
 header img{
     width: 200px;
     background: transparent;
+    /* ADD: Remove any top margin that might be pushing the header content down */
+    margin-top: 0; 
 }
 .intro{
     text-align: center;
+    /* ADD: Ensure no extra top margin on the intro text */
+    margin-top: 0;
 }
 button{
     background-color: cadetblue;
@@ -96,12 +102,43 @@ input{
 
 @media screen and (max-width: 768px) {
     
+    /* ---------------------------------------------------- */
+    /* *** NEW: Header & Logo Fixes *** */
+    /* ---------------------------------------------------- */
+    header {
+        /* Reduce header padding on mobile to make it more compact */
+        padding: 10px 5px; 
+    }
+    header img {
+        /* Make the logo smaller on mobile */
+        width: 120px; 
+    }
+    
+    /* ---------------------------------------------------- */
+    /* *** NEW: Text Size Fixes *** */
+    /* ---------------------------------------------------- */
     /* Global Adjustments */
     body {
         /* Increase text size for better reading on small devices */
         font-size: 18px; 
         margin: 10px;
     }
+    
+    /* Ensure paragraph text is readable */
+    p {
+        font-size: 1.1em; /* 10% larger than the body font-size */
+        line-height: 1.5; /* Essential for mobile readability */
+        margin: 1em 0; /* Add vertical spacing to break up large blocks of text */
+    }
+    
+    /* Ensure main headings are clearly visible */
+    h2 {
+        font-size: 1.6em;
+    }
+    
+    /* ---------------------------------------------------- */
+    /* *** Existing Layout Fixes *** */
+    /* ---------------------------------------------------- */
     
     /* Multi-Column Layouts (The Fix for Stacking) */
     .media, .solns, .impact {
